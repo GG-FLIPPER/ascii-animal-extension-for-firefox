@@ -1,6 +1,8 @@
 # ASCII Animals — New Tab (Browser Extension)
 
-> ASCII animals as your new tab page — butterflies, koi, jellyfish, dragonflies, frogs, cranes, and crabs, featuring a personalized time-of-day greeting, interactive click ripples, automatic browser shortcuts, and a liquid-glass search bar.
+> ASCII animals as your new tab page — butterflies, koi, jellyfish, dragonflies, frogs, cranes, and crabs, featuring a personalized time-of-day greeting, interactive click ripples, automatic browser shortcuts, and a liquid-glass search bar.>
+
+**Live demo: [ascii-animals-extension.antideploy.app](https://ascii-animals-extension.antideploy.app)
 
 ![ASCII Animals New Tab Preview](screenshots/preview.png)
 
