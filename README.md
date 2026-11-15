@@ -8,22 +8,32 @@
 
 ## ✨ Features
 
-- **Dynamic Interactive Animals:** 7 beautiful animated ASCII creatures with realistic physics, wing flapping, and behavioral AI.
+- **Dynamic Interactive Animals:** 7 beautiful animated ASCII creatures with realistic physics, wing flapping, and behavioral AI (Butterflies, Koi, Jellyfish, Dragonflies, Frogs, Cranes, Crabs).
+- **Multiple Creature Modes:** Switch between different animals anytime using the Tweaks panel.
 - **Personalized Greeting:** Prompts for your name on first install (`Good morning, [Name]`), saved locally in your browser. Click on your name anytime to edit or change it.
 - **Auto Browser Shortcuts:** Automatically fetches and displays your browser's top visited sites (`chrome.topSites`). Right-click any shortcut to **Edit** (custom name/URL) or **Remove** it.
 - **Multi-Browser Auto-Detect:** Automatically displays the native browser mark for **Brave**, **Google Chrome**, or **Microsoft Edge** with zero external image files.
 - **Compact ASCII Clock:** Character-grid clock featuring 12-hour time, AM/PM, and subtle ambient glow.
 - **Liquid Glass Search Bar:** Minimalist search pill powered by Google search.
 - **Interactive Ripples:** Click anywhere on the canvas to startle the creatures and watch water ripples smoothly dissipate into a clean, dark grid.
-- **Tweaks Control Panel:** Click the settings icon at the bottom-right corner to customize animal counts, speeds, movement, and visual themes.
+- **Tweaks Control Panel:** Click the settings icon at the bottom-right corner to customize animal types, counts, speeds, movement, and visual themes.
 
 ---
 
-## 📸 Screenshots
+## 📸 Screenshots & Animal Showcase
 
-| First-Time Name Prompt | Interactive Click Ripple Animation |
+### 🐾 Creature Varieties
+
+| 🦋 Butterflies | 🐸 Frogs |
 | :---: | :---: |
-| ![First-Time Name Setup](screenshots/name-modal.png) | ![Interactive Click Ripple](screenshots/click-ripple.png) |
+| ![Butterflies](screenshots/preview.png) | ![Frogs](screenshots/frogs.png) |
+
+| 🦀 Crabs | 🌊 Interactive Click Ripple |
+| :---: | :---: |
+| ![Crabs](screenshots/crabs.png) | ![Click Ripple](screenshots/click-ripple.png) |
+
+### ⚙️ First-Time Setup
+![First-Time Name Setup](screenshots/name-modal.png)
 
 ---
 
