@@ -51,7 +51,7 @@ The **Tweaks** button sits at the bottom-right corner of the page. Click it to r
 
 ### Firefox
 
-1. Download `ascii-animals-extension-v2.1.zip` from the [latest GitHub release](https://github.com/GG-FLIPPER/ascii-animal-extension-for-firefox/releases/latest).
+1. Download `ascii-animals-extension-v2.2.zip` from the [latest GitHub release](https://github.com/GG-FLIPPER/ascii-animal-extension-for-firefox/releases/latest).
 2. Extract the ZIP to a folder on your computer.
 3. Open `about:debugging#/runtime/this-firefox`.
 4. Click **Load Temporary Add-on...**, open the extracted folder, and select `manifest.json`.
@@ -63,7 +63,11 @@ Use the same extracted ZIP and `manifest.json` steps above. In LibreWolf, open `
 
 Temporary add-ons are session-scoped: Firefox, LibreWolf, and other Gecko browsers remove them when the browser closes. For a persistent installation, use a signed release from [addons.mozilla.org](https://addons.mozilla.org/) or your browser's supported signed-extension store. Do not select the ZIP itself; select the extracted `manifest.json` file.
 
-The Firefox build targets Firefox 140 or newer on desktop (and Firefox 142 or newer on Android) because it declares Firefox's built-in data-collection consent metadata.
+The Firefox build targets Firefox 140 or newer on desktop (and Firefox 142 or newer on Android) because it declares Firefox's built-in data-collection consent metadata. The `.xpi` download is the same package with an XPI filename:
+
+- **Standard Firefox:** **Install Add-on from File** still requires a Mozilla-signed add-on. The `.xpi` extension does not bypass signing.
+- **LibreWolf and other Gecko browsers:** unsigned XPIs may be installable if the browser's signing policy or preferences allow them; otherwise use temporary loading or a signed package.
+- **Developer Edition/Nightly:** unsigned add-ons can be installed only when signing checks are explicitly disabled, such as with the supported development setting for `xpinstall.signatures.required`. Do not disable signing checks in a normal browsing profile.
 
 ### Chromium browsers
 
