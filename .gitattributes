@@ -1,0 +1,8 @@
+# Documentation screenshots stay in the repository and keep rendering in the
+# README, but GitHub leaves them out of its auto-generated "Source code"
+# ZIP/TAR archives (git archive honours export-ignore).
+screenshots/ export-ignore
+
+# Release tooling is not part of the source archive either.
+.github/ export-ignore
+.gitattributes export-ignore
