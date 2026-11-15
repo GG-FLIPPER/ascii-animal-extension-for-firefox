@@ -1,0 +1,86 @@
+name: Release
+
+# Builds the downloadable release ZIP without the README documentation
+# screenshots (screenshots/ stays in the repo and keeps rendering in README).
+# The ZIP is built from an explicit allowlist, so only the files the
+# extension needs to run are included.
+#
+# How to cut a release: push a version tag, e.g. git tag v2.0 && git push origin v2.0
+# To test without a release: run this workflow manually from the Actions tab.
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build release ZIP (without documentation screenshots)
+        run: |
+          VERSION="${GITHUB_REF_NAME}"
+          ZIP="ascii-animals-extension-${VERSION}.zip"
+          echo "ZIP_NAME=${ZIP}" >> "$GITHUB_ENV"
+          # Explicit allowlist: only what the extension needs to run.
+          # screenshots/ is README documentation only and is left out.
+          # dia-logo.png IS required at runtime (used by assets/*.css).
+          zip -r "${ZIP}" \
+            manifest.json \
+            index.html \
+            init.js \
+            dia-logo.png \
+            assets \
+            icons \
+            LICENSE \
+            LICENSE-pond \
+            README.md
+
+      - name: Verify release ZIP contents
+        run: |
+          echo "--- ZIP contents ---"
+          unzip -l "${ZIP_NAME}"
+          # Must NOT contain documentation screenshots.
+          if unzip -l "${ZIP_NAME}" | grep -q "screenshots/"; then
+            echo "::error::Release ZIP contains screenshots/ — refusing to publish."
+            exit 1
+          fi
+          # Must contain every file the extension needs to run.
+          for f in manifest.json index.html init.js dia-logo.png LICENSE LICENSE-pond README.md; do
+            unzip -l "${ZIP_NAME}" | grep -q " ${f}$" || { echo "::error::Missing required file: ${f}"; exit 1; }
+          done
+          unzip -l "${ZIP_NAME}" | grep -q "assets/.*\.js" || { echo "::error::Missing built JS in assets/"; exit 1; }
+          unzip -l "${ZIP_NAME}" | grep -q "assets/.*\.css" || { echo "::error::Missing built CSS in assets/"; exit 1; }
+          for f in icons/icon-16.png icons/icon-32.png icons/icon-48.png icons/icon-128.png; do
+            unzip -l "${ZIP_NAME}" | grep -q " ${f}$" || { echo "::error::Missing required file: ${f}"; exit 1; }
+          done
+          echo "ZIP verified: no screenshots, all runtime files present."
+
+      - name: Upload ZIP as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ZIP_NAME }}
+          path: ${{ env.ZIP_NAME }}
+          if-no-files-found: error
+
+      - name: Create or update GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # If the release was already created (e.g. from GitHub's web UI),
+          # just attach the ZIP to it; otherwise create the release.
+          if gh release view "${GITHUB_REF_NAME}" >/dev/null 2>&1; then
+            gh release upload "${GITHUB_REF_NAME}" "${ZIP_NAME}" --clobber
+          else
+            gh release create "${GITHUB_REF_NAME}" "${ZIP_NAME}" \
+              --title "ASCII Animals — New Tab ${GITHUB_REF_NAME}" \
+              --notes "Install: unzip and Load unpacked in brave://extensions (Developer mode on). Documentation screenshots stay in the repository and are not included in this ZIP."
+          fi
