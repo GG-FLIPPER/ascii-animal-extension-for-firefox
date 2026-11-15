@@ -37,6 +37,14 @@
 ### ⚙️ First-Time Setup
 ![First-Time Name Setup](screenshots/name-modal.png)
 
+### 🎛️ Tweaks Panel
+
+The **Tweaks** button sits at the bottom-right corner of the page. Click it to reveal the hidden animal panel, where you can switch animals and fine-tune movement and flight settings (density, direction, speed, size, flutter, glide and more).
+
+![Tweaks button](screenshots/tweaks-button.png)
+
+![Tweaks panel](screenshots/tweaks-panel.png)
+
 ---
 
 ## 🚀 Installation (Brave / Chrome / Edge)
