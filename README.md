@@ -1,35 +1,45 @@
 # ASCII Animals — New Tab (Browser Extension)
 
-ASCII animals as your new tab page — butterflies, koi, jellyfish, dragonflies, frogs, cranes and crabs, featuring a personalized time-of-day greeting, interactive click ripples, automatic browser shortcuts, and a liquid-glass search bar.
+> ASCII animals as your new tab page — butterflies, koi, jellyfish, dragonflies, frogs, cranes, and crabs, featuring a personalized time-of-day greeting, interactive click ripples, automatic browser shortcuts, and a liquid-glass search bar.
+
+![ASCII Animals New Tab Preview](screenshots/preview.png)
 
 ---
 
 ## ✨ Features
 
-- **Dynamic Interactive Animals:** 7 beautiful ASCII creatures with realistic physics and wing flapping.
-- **Personalized Greeting:** Prompts for your name on first install (`Good morning, [Name]`), saved locally in your browser. Click your name anytime to edit or change it.
-- **Auto Browser Shortcuts:** Automatically fetches and displays your browser's most-visited sites (`chrome.topSites`). Right-click any shortcut to **Edit** (custom name/URL) or **Remove** it.
-- **Multi-Browser Auto-Detect:** Automatically shows the native logo for **Brave**, **Google Chrome**, or **Microsoft Edge** with zero external image files.
-- **Compact ASCII Clock:** Character-grid clock with 12-hour time, AM/PM, and subtle ambient glow.
+- **Dynamic Interactive Animals:** 7 beautiful animated ASCII creatures with realistic physics, wing flapping, and behavioral AI.
+- **Personalized Greeting:** Prompts for your name on first install (`Good morning, [Name]`), saved locally in your browser. Click on your name anytime to edit or change it.
+- **Auto Browser Shortcuts:** Automatically fetches and displays your browser's top visited sites (`chrome.topSites`). Right-click any shortcut to **Edit** (custom name/URL) or **Remove** it.
+- **Multi-Browser Auto-Detect:** Automatically displays the native browser mark for **Brave**, **Google Chrome**, or **Microsoft Edge** with zero external image files.
+- **Compact ASCII Clock:** Character-grid clock featuring 12-hour time, AM/PM, and subtle ambient glow.
 - **Liquid Glass Search Bar:** Minimalist search pill powered by Google search.
-- **Interactive Ripples:** Click anywhere on the canvas to startle the creatures and watch water ripples dissipate into a clean, dark grid.
+- **Interactive Ripples:** Click anywhere on the canvas to startle the creatures and watch water ripples smoothly dissipate into a clean, dark grid.
 - **Tweaks Control Panel:** Click the settings icon at the bottom-right corner to customize animal counts, speeds, movement, and visual themes.
+
+---
+
+## 📸 Screenshots
+
+| First-Time Name Prompt | Interactive Click Ripple Animation |
+| :---: | :---: |
+| ![First-Time Name Setup](screenshots/name-modal.png) | ![Interactive Click Ripple](screenshots/click-ripple.png) |
 
 ---
 
 ## 🚀 Installation (Brave / Chrome / Edge)
 
-1. Download or clone this repository to your computer:
+1. Clone or download this repository to your computer:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/ascii-animals-newtab.git
+   git clone https://github.com/sushilbyte7/ascii-animals-extension.git
    ```
 2. Open your browser's Extensions page:
    - **Brave:** `brave://extensions`
    - **Chrome:** `chrome://extensions`
    - **Edge:** `edge://extensions`
-3. Toggle **Developer mode** to **ON** (usually in the top-right corner).
+3. Toggle **Developer mode** to **ON** (top-right corner).
 4. Click **Load unpacked** (top-left).
-5. Select this folder.
+5. Select this `ascii-animals-extension` folder.
 6. Open a new tab (`Ctrl + T`) — enter your name and enjoy!
 
 ---
