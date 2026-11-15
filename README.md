@@ -63,6 +63,8 @@ Use the same extracted ZIP and `manifest.json` steps above. In LibreWolf, open `
 
 Temporary add-ons are session-scoped: Firefox, LibreWolf, and other Gecko browsers remove them when the browser closes. For a persistent installation, use a signed release from [addons.mozilla.org](https://addons.mozilla.org/) or your browser's supported signed-extension store. Do not select the ZIP itself; select the extracted `manifest.json` file.
 
+The Firefox build targets Firefox 140 or newer on desktop (and Firefox 142 or newer on Android) because it declares Firefox's built-in data-collection consent metadata.
+
 ### Chromium browsers
 
 For Brave, Chrome, and Edge, download and extract the ZIP, open the browser's extensions page (`brave://extensions`, `chrome://extensions`, or `edge://extensions`), enable **Developer mode**, and click **Load unpacked** to select the extracted folder.

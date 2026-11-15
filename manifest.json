@@ -10,8 +10,16 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "ascii-animals-new-tab@example.com",
-      "strict_min_version": "109.0"
+      "id": "@ascii-animals-new-tab",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      },
+      "strict_min_version": "140.0"
+    },
+    "gecko_android": {
+      "strict_min_version": "142.0"
     }
   },
   "chrome_url_overrides": {
