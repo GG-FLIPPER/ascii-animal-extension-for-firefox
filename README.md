@@ -72,4 +72,6 @@
 
 ## 📄 License
 
-MIT License — see [LICENSE](LICENSE) and [LICENSE-pond](LICENSE-pond) for details.
+This project is licensed under the Apache License 2.0 — see [LICENSE](LICENSE) for details.
+
+Parts of the code come from other MIT-licensed projects and keep their MIT license: Stephen's ascii-animals ([LICENSE-MIT](LICENSE-MIT)) and pursurer's AsciiMark ([LICENSE-pond](LICENSE-pond)).
