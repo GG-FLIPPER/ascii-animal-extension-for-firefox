@@ -64,6 +64,12 @@
 
 ---
 
+## ⬇️ Downloads
+
+- **Stable releases:** [GitHub Releases](https://github.com/sushilbyte7/ascii-animals-extension/releases) — download the latest `ascii-animals-extension-vX.Y.zip`, unzip it, and load it unpacked (see Installation above).
+
+---
+
 ## 📄 License
 
 MIT License — see [LICENSE](LICENSE) and [LICENSE-pond](LICENSE-pond) for details.
