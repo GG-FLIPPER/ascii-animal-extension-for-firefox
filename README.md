@@ -47,21 +47,25 @@ The **Tweaks** button sits at the bottom-right corner of the page. Click it to r
 
 ---
 
-## 🚀 Installation (Firefox / Brave / Chrome / Edge)
+## 🚀 Installation (Firefox and Firefox-based browsers)
 
-1. Clone or download this repository to your computer:
-   ```bash
-   git clone https://github.com/sushilbyte7/ascii-animals-extension.git
-   ```
-2. Open your browser's Extensions page:
-   - **Firefox:** `about:debugging#/runtime/this-firefox`
-   - **Brave:** `brave://extensions`
-   - **Chrome:** `chrome://extensions`
-   - **Edge:** `edge://extensions`
-3. In Firefox, click **Load Temporary Add-on...** and select `manifest.json`. In Chromium browsers, toggle **Developer mode** to **ON**, then click **Load unpacked** and select this `ascii-animals-extension` folder.
-4. Open a new tab (`Ctrl + T`) — enter your name and enjoy!
+### Firefox
 
-Firefox temporary add-ons are removed when Firefox closes. For a persistent Firefox installation, submit the extension to addons.mozilla.org or install a signed Firefox build.
+1. Download `ascii-animals-extension-v2.1.zip` from the [latest GitHub release](https://github.com/GG-FLIPPER/ascii-animal-extension-for-firefox/releases/latest).
+2. Extract the ZIP to a folder on your computer.
+3. Open `about:debugging#/runtime/this-firefox`.
+4. Click **Load Temporary Add-on...**, open the extracted folder, and select `manifest.json`.
+5. Open a new tab (`Ctrl + T`) — enter your name and enjoy.
+
+### LibreWolf and other Gecko-based browsers
+
+Use the same extracted ZIP and `manifest.json` steps above. In LibreWolf, open `about:debugging`, select **This LibreWolf** (or the equivalent current-browser section), and choose **Load Temporary Add-on...**. Other Firefox-based browsers generally provide the same `about:debugging` workflow, although the page name or menu labels may differ.
+
+Temporary add-ons are session-scoped: Firefox, LibreWolf, and other Gecko browsers remove them when the browser closes. For a persistent installation, use a signed release from [addons.mozilla.org](https://addons.mozilla.org/) or your browser's supported signed-extension store. Do not select the ZIP itself; select the extracted `manifest.json` file.
+
+### Chromium browsers
+
+For Brave, Chrome, and Edge, download and extract the ZIP, open the browser's extensions page (`brave://extensions`, `chrome://extensions`, or `edge://extensions`), enable **Developer mode**, and click **Load unpacked** to select the extracted folder.
 
 ---
 
