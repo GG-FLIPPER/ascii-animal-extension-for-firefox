@@ -878,4 +878,43 @@ body.tweaks-visible .top-layout {
     .icon-btn {
         transition: none
     }
+
+    body.layout-custom .top-layout {
+        position: static;
+        display: contents
+    }
+
+    body.layout-custom .top-layout > .searchbar,
+    body.layout-custom .top-layout > .shortcuts {
+        position: fixed;
+        left: 50%;
+        z-index: 20;
+        translate: -50% 0;
+        margin: 0
+    }
+
+    body.layout-custom .searchbar[data-position=auto] {
+        top: 126px
+    }
+
+    body.layout-custom .shortcuts[data-position=auto] {
+        top: 20px
+    }
+
+    body.layout-custom .searchbar[data-position=top],
+    body.layout-custom .shortcuts[data-position=top] {
+        top: 20px
+    }
+
+    body.layout-custom .searchbar[data-position=center],
+    body.layout-custom .shortcuts[data-position=center] {
+        top: 50%;
+        translate: -50% -50%
+    }
+
+    body.layout-custom .searchbar[data-position=bottom],
+    body.layout-custom .shortcuts[data-position=bottom] {
+        top: auto;
+        bottom: 20px
+    }
 }

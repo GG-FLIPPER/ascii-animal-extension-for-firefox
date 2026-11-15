@@ -14,6 +14,7 @@
 - **Multiple Creature Modes:** Switch between different animals anytime using the Tweaks panel.
 - **Personalized Greeting:** Prompts for your name on first install (`Good morning, [Name]`), saved locally in your browser. Click on your name anytime to edit or change it.
 - **Auto Browser Shortcuts:** Automatically fetches and displays your browser's top visited sites (`topSites`). Right-click any shortcut to **Edit** (custom name/URL) or **Remove** it.
+- **Search and Layout Customization:** Choose Google, Bing, DuckDuckGo, Brave, or Ecosia, and position the search bar and shortcuts at their default, top, center, or bottom positions.
 - **Multi-Browser Auto-Detect:** Automatically displays the native browser mark for **Brave**, **Google Chrome**, or **Microsoft Edge** with zero external image files; Firefox uses the extension icon.
 - **Compact ASCII Clock:** Character-grid clock featuring 12-hour time, AM/PM, and subtle ambient glow.
 - **Liquid Glass Search Bar:** Minimalist search pill powered by Google search.
@@ -39,7 +40,7 @@
 
 ### 🎛️ Tweaks Panel
 
-The **Tweaks** button sits at the bottom-right corner of the page. Click it to reveal the hidden animal panel, where you can switch animals and fine-tune movement and flight settings (density, direction, speed, size, flutter, glide and more).
+The **Tweaks** button sits at the bottom-right corner of the page. Click it to reveal the hidden panel, where you can switch animals, choose a search engine, reposition the search bar and shortcuts, and fine-tune movement and flight settings (density, direction, speed, size, flutter, glide and more). Right-click a shortcut to edit it or remove it completely; removed shortcuts stay hidden across reloads.
 
 ![Tweaks button](screenshots/tweaks-button.png)
 
