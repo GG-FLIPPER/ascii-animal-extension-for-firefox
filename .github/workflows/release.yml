@@ -28,7 +28,9 @@ jobs:
         run: |
           VERSION="${GITHUB_REF_NAME}"
           ZIP="ascii-animals-extension-${VERSION}.zip"
+          XPI="ascii-animals-extension-${VERSION}.xpi"
           echo "ZIP_NAME=${ZIP}" >> "$GITHUB_ENV"
+          echo "XPI_NAME=${XPI}" >> "$GITHUB_ENV"
           # Explicit allowlist: only what the extension needs to run.
           # screenshots/ is README documentation only and is left out.
           # dia-logo.png IS required at runtime (used by assets/*.css).
@@ -43,6 +45,7 @@ jobs:
             LICENSE-MIT \
             LICENSE-pond \
             README.md
+          cp "${ZIP}" "${XPI}"
 
       - name: Verify release ZIP contents
         run: |
@@ -63,12 +66,16 @@ jobs:
             unzip -l "${ZIP_NAME}" | grep -q " ${f}$" || { echo "::error::Missing required file: ${f}"; exit 1; }
           done
           echo "ZIP verified: no screenshots, all runtime files present."
+          unzip -t "${XPI_NAME}" >/dev/null
+          echo "XPI verified: identical Firefox-installable package."
 
-      - name: Upload ZIP as workflow artifact
+      - name: Upload ZIP and XPI as workflow artifacts
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.ZIP_NAME }}
-          path: ${{ env.ZIP_NAME }}
+          path: |
+            ${{ env.ZIP_NAME }}
+            ${{ env.XPI_NAME }}
           if-no-files-found: error
 
       - name: Create or update GitHub Release
@@ -79,9 +86,9 @@ jobs:
           # If the release was already created (e.g. from GitHub's web UI),
           # just attach the ZIP to it; otherwise create the release.
           if gh release view "${GITHUB_REF_NAME}" >/dev/null 2>&1; then
-            gh release upload "${GITHUB_REF_NAME}" "${ZIP_NAME}" --clobber
+            gh release upload "${GITHUB_REF_NAME}" "${ZIP_NAME}" "${XPI_NAME}" --clobber
           else
-            gh release create "${GITHUB_REF_NAME}" "${ZIP_NAME}" \
+            gh release create "${GITHUB_REF_NAME}" "${ZIP_NAME}" "${XPI_NAME}" \
               --title "ASCII Animals — New Tab ${GITHUB_REF_NAME}" \
-              --notes "Install: unzip and Load unpacked in brave://extensions (Developer mode on). Documentation screenshots stay in the repository and are not included in this ZIP."
+              --notes "The ZIP is for Chromium Load unpacked installs. The XPI is the same package with a Firefox-friendly filename; standard Firefox still requires Mozilla signing. Documentation screenshots stay in the repository and are not included in either package."
           fi
