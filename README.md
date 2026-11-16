@@ -52,7 +52,7 @@ The **Tweaks** button sits at the bottom-right corner of the page. Click it to r
 
 ### Firefox
 
-1. Download `ascii-animals-extension-v2.2.zip` from the [latest GitHub release](https://github.com/GG-FLIPPER/ascii-animal-extension-for-firefox/releases/latest).
+1. Download the latest `ascii-animals-extension-vX.Y.zip` from the [latest GitHub release](https://github.com/GG-FLIPPER/ascii-animal-extension-for-firefox/releases/latest).
 2. Extract the ZIP to a folder on your computer.
 3. Open `about:debugging#/runtime/this-firefox`.
 4. Click **Load Temporary Add-on...**, open the extracted folder, and select `manifest.json`.
