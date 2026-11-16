@@ -36,6 +36,7 @@ jobs:
             manifest.json \
             index.html \
             init.js \
+            animation-scheduler.js \
             dia-logo.png \
             assets \
             icons \
@@ -54,7 +55,7 @@ jobs:
             exit 1
           fi
           # Must contain every file the extension needs to run.
-          for f in manifest.json index.html init.js dia-logo.png LICENSE LICENSE-MIT LICENSE-pond README.md; do
+          for f in manifest.json index.html init.js animation-scheduler.js dia-logo.png LICENSE LICENSE-MIT LICENSE-pond README.md; do
             unzip -l "${ZIP_NAME}" | grep -q " ${f}$" || { echo "::error::Missing required file: ${f}"; exit 1; }
           done
           unzip -l "${ZIP_NAME}" | grep -q "assets/.*\.js" || { echo "::error::Missing built JS in assets/"; exit 1; }
